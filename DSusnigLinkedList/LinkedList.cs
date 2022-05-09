@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace DSusnigLinkedList
 {
-    public class LinkedList
+    public class LinkedListMethod<T>
     {
 
-        Node top;
+        Node<T> top;
+
+        public int Count = 0;
         
-        public void Push(int x)
+
+        public void Push(T x)
         {
-            Node temp = new(x);
+            Node<T> temp = new();
             if (temp == null)
             {
                 Console.WriteLine("Heap overflow");
@@ -25,8 +28,39 @@ namespace DSusnigLinkedList
                 temp.link = top;
                 top = temp;
             }
-
+            Count++;
         }
+
+        public bool isEmpty()
+        {
+            return top == null;
+        }
+        public T Peak()
+        {
+            if (!isEmpty())
+            {
+                return top.data;
+
+            }
+            else
+            {
+                Console.WriteLine("stack empty");
+                return default(T);
+            }
+        }
+
+        public void Pop()
+        {
+            if (top == null)
+            {
+                Console.WriteLine("Stack underflow");
+                return;
+            }
+            top = (top).link;
+            Count--;
+        }
+
+
         public void Display()
         {
             if (top == null)
@@ -36,7 +70,7 @@ namespace DSusnigLinkedList
             }
             else
             {
-                Node temp = top;
+                Node<T> temp = top;
                 while (temp != null)
                 {
                     Console.Write("{0}->", temp.data);
