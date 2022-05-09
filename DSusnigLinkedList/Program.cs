@@ -34,11 +34,21 @@ while (true)
             enQueueMethod.enqueue(30);
             enQueueMethod.enqueue(56);
 
-            Console.Write("The Elements of the Queue are : ");
+            Console.Write("Elements in Queue are : " + enQueueMethod.Count);
             enQueueMethod.Display();
             Console.WriteLine("\n");
-            break;
+
+
+            int LengthofLL1 = enQueueMethod.Count;
+            for (int i = 0; i < LengthofLL1; i++)
+            {
+                enQueueMethod.dequeue();
+                Console.WriteLine("Number of elements in Queue after Dequeue method : " + enQueueMethod.Count);
+
+            }
+            break;          
         default:
+            Console.WriteLine("Please select from the above options");
             break;
 
     }
