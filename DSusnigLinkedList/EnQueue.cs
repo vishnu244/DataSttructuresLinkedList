@@ -43,10 +43,7 @@ namespace DSusnigLinkedList
 
             if (this.front == null)
             
-                this.rear = null;
-                
-            
-                
+                this.rear = null;              
             Count--;
 
         }
@@ -70,17 +67,6 @@ namespace DSusnigLinkedList
             }
 
         }
-        /* public void dequeue()
-         {
-
-             if (this.front == null)
-                 return;
-
-             QNode temp = this.front;
-             this.front = this.front.next;
-
-             if (this.front == null)
-                 this.rear = null;
-         }*/
+        
     }
 }
